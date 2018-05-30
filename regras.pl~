@@ -1,0 +1,1 @@
+velRoda(Ve,Vd,SensF,SensD,SensE) :- SensF < 0.5, SensD < 0.5, SensE == 0.0, Ve is 0.0,Vd is 1.0.

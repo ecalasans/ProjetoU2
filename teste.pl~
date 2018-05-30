@@ -1,0 +1,74 @@
+homem(eric).
+homem(daniel).
+homem(joão).
+homem(jean).
+homem(matheus).
+homem(thiago).
+homem(sérgio).
+
+mulher(jeciane).
+mulher(erika).
+mulher(eliene).
+mulher(jeane).
+mulher(larissa).
+mulher(lanay).
+mulher(letícia).
+mulher(andréia).
+
+cachorro(luke).
+cachorro(billy).
+cachorro(flock).
+cachorro(hercules).
+
+pai(jeciane, joão).
+pai(jean, joão).
+pai(jeane, joão).
+mae(jeciane, eliene).
+mae(jean, eliene).
+mae(jeane, eliene).
+
+pai(larissa, sérgio).
+pai(lanay, sérgio).
+pai(letícia, sérgio).
+mae(larissa, jeane).
+mae(lanay, jeane).
+mae(letícia, jeane).
+
+pai(matheus, jean).
+pai(thiago, jean).
+mae(thiago, andréia).
+mae(matheus, andréia).
+
+pai(erika, eric).
+pai(daniel, eric).
+mae(erika, jeciane).
+mae(daniel, jeciane).
+
+cachorroDe(luke, eric).
+cachorroDe(luke, jeciane).
+cachorroDe(billy, jean).
+cachorroDe(billy, andréia).
+cachorroDe(flock, jean).
+cachorroDe(hercules, sérgio).
+cachorroDe(hercules, jeane).
+
+marido(jeciane, eric).
+marido(eliene, joão).
+marido(andréia, jean).
+marido(jeane, sérgio).
+
+esposa(jean, andréia).
+esposa(eric, jeciane).
+esposa(joão, eliene).
+esposa(sérgio, jeane).
+
+filho(X,Y) :- (pai(X,Y); mae(X,Y)),homem(X).
+filha(X,Y) :- (pai(X,Y); mae(X,Y)), mulher(X).
+
+irmaos(X,Y) :- (pai(X,Z),pai(Y,Z)) ; (mae(X,Z),mae(Y,Z)).
+irmao(X,Y) :- ((pai(X,Z),pai(Y,Z)) ; (mae(X,Z),mae(Y,Z))),homem(X).
+irma(X,Y) :- ((pai(X,Z),pai(Y,Z)) ; (mae(X,Z),mae(Y,Z))),mulher(X).
+
+primos(X,Y) :- A is ((pai(X,Z), pai(Y,Z)).
+
+

@@ -1,0 +1,72 @@
+[System]
+Name='matlabVrepFuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=2
+NumRules=16
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='sensorF1'
+Range=[0 2]
+NumMFs=2
+MF1='perto':'trapmf',[0 0 0.8 1.2]
+MF2='longe':'trapmf',[0.8 1.2 2 2]
+
+[Input2]
+Name='sensorF2'
+Range=[0 2]
+NumMFs=2
+MF1='perto':'trapmf',[0 0 0.8 1.2]
+MF2='longe':'trapmf',[0.8 1.2 2 2]
+
+[Input3]
+Name='sensorD'
+Range=[0 2]
+NumMFs=2
+MF1='perto':'trapmf',[0 0 0.8 1.2]
+MF2='longe':'trapmf',[0.8 1.2 2 2]
+
+[Input4]
+Name='sensorE'
+Range=[0 2]
+NumMFs=2
+MF1='perto':'trapmf',[0 0 0.8 1.2]
+MF2='longe':'trapmf',[0.8 1.2 2 2]
+
+[Output1]
+Name='rodaE'
+Range=[-2 2]
+NumMFs=2
+MF1='tras':'trimf',[-2 -2 2]
+MF2='frente':'trimf',[-2 2 2]
+
+[Output2]
+Name='rodaD'
+Range=[-2 2]
+NumMFs=2
+MF1='tras':'trimf',[-2 -2 2]
+MF2='frente':'trimf',[-2 2 2]
+
+[Rules]
+1 1 0 0, 2 1 (1) : 1
+1 0 1 0, 1 2 (1) : 1
+0 0 1 0, 2 2 (1) : 1
+0 0 0 1, 2 2 (1) : 1
+2 2 0 1, 2 2 (1) : 1
+0 1 0 1, 2 1 (1) : 1
+0 0 1 1, 2 2 (1) : 1
+2 2 1 0, 2 2 (1) : 1
+2 2 0 1, 2 2 (1) : 1
+1 1 1 0, 1 2 (1) : 1
+1 1 0 1, 2 1 (1) : 1
+2 2 0 0, 2 2 (1) : 1
+2 0 2 0, 2 2 (1) : 1
+0 0 1 1, 2 2 (1) : 1
+1 1 2 0, 2 2 (1) : 1
+1 1 0 2, 2 2 (1) : 1
